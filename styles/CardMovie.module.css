@@ -1,0 +1,42 @@
+.card {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      width: 500px;
+}
+.heart {
+      position: relative;
+}
+.image {
+      border-radius: 1rem;
+      /* position: relative; */
+}
+
+.div_info {
+      position: absolute;
+      padding: 0.5rem;
+      top: 0;
+      left: 0;
+      width: 500px;
+      height: 272px;
+      background-color: rgba(0, 0, 0);
+      opacity: 0;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-direction: column;
+      transition: 0.5s;
+      border-radius: 1rem;
+}
+.div_info:hover {
+      opacity: 0.5;
+}
+.movieMaker {
+      color: white;
+      font-weight: 500;
+      z-index: 10;
+}
+.id {
+      font-weight: 500;
+      color: white;
+      z-index: 10;
+}
