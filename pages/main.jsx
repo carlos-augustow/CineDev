@@ -1,5 +1,5 @@
 import callingApi from "./api/pexels";
-import styles from "../styles/Main.module.css";
+import styles from "../styles/Main.module.scss";
 import CardMovie from "../components/CardMovie";
 import Image from "next/image";
 
@@ -31,32 +31,24 @@ function Main({ videos }) {
       return (
             <>
                   <Carousel
-                        interval={2000}
+                        interval={4000}
                         autoPlay={true}
                         infiniteLoop={true}
                         showThumbs={false}
                         showArrows={false}
-                        width={"50%"}
+                        width={"100%"}
                   >
                         <div>
                               <Image
-                                    src={`https://images.pexels.com/videos/1550080/free-video-1550080.jpg?auto=compress&cs=tinysrgb&fit=crop&h=${heightImgs}&w=${widthImgs}`}
+                                    src="/../public/imgs/prodev/1.png"
                                     width={widthImgs}
                                     height={heightImgs}
                                     alt="img"
                               />
                         </div>
                         <div>
-                              <Image
-                                    src={`https://images.pexels.com/videos/3163534/free-video-3163534.jpg?auto=compress&cs=tinysrgb&fit=crop&h=${heightImgs}&w=${widthImgs}`}
-                                    width={widthImgs}
-                                    height={heightImgs}
-                                    alt="img"
-                              />
-                        </div>
-                        <div>
-                              <Image
-                                    src={`https://images.pexels.com/videos/857195/free-video-857195.jpg?auto=compress&cs=tinysrgb&fit=crop&h=${heightImgs}&w=${widthImgs}`}
+                        <Image
+                                    src="/../public/imgs/sharbaz_+_banner.png"
                                     width={widthImgs}
                                     height={heightImgs}
                                     alt="img"
@@ -69,22 +61,78 @@ function Main({ videos }) {
                               <CardMovie key={video.id} video={video} />
                         ))}
                   </main> */}
+                  <div className={styles.main}>
                   <Carousel
-                        interval={2000}
+                        showThumbs={false}
                         autoPlay={false}
                         infiniteLoop={true}
-                        showThumbs={false}
                         showArrows={true}
-                        width={"90%"}
+                        width={"100%"}
                         swipeable={true}
                         centerMode={true}
                         centerSlidePercentage={100}
                         className={styles.carouselMovies}
+                        showStatus={false}
                   >
                         {videos.map((video) => (
                               <CardMovie key={video.id} video={video} />
                         ))}
                   </Carousel>
+                  </div>
+                  <div className={styles.main}>
+                  <Carousel
+                        showThumbs={false}
+                        autoPlay={false}
+                        infiniteLoop={true}
+                        showArrows={true}
+                        width={"100%"}
+                        swipeable={true}
+                        centerMode={true}
+                        centerSlidePercentage={100}
+                        className={styles.carouselMovies}
+                        showStatus={false}
+                  >
+                        {videos.map((video) => (
+                              <CardMovie key={video.id} video={video} />
+                        ))}
+                  </Carousel>
+                  </div>
+                  <div className={styles.main}>
+                  <Carousel
+                        showThumbs={false}
+                        autoPlay={false}
+                        infiniteLoop={true}
+                        showArrows={true}
+                        width={"100%"}
+                        swipeable={true}
+                        centerMode={true}
+                        centerSlidePercentage={100}
+                        className={styles.carouselMovies}
+                        showStatus={false}
+                  >
+                        {videos.map((video) => (
+                              <CardMovie key={video.id} video={video} />
+                        ))}
+                  </Carousel>
+                  </div>
+                  <div className={styles.main}>
+                  <Carousel
+                        showThumbs={false}
+                        autoPlay={false}
+                        infiniteLoop={true}
+                        showArrows={true}
+                        width={"100%"}
+                        swipeable={true}
+                        centerMode={true}
+                        centerSlidePercentage={100}
+                        className={styles.carouselMovies}
+                        showStatus={false}
+                  >
+                        {videos.map((video) => (
+                              <CardMovie key={video.id} video={video} />
+                        ))}
+                  </Carousel>
+                  </div>
             </>
       );
 }
