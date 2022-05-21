@@ -1,7 +1,19 @@
 .card {
-      margin-top: 1rem;
-      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-left: 3% !important;
+      margin-right: 0;
+      border-radius: 1rem;
       width: 500px;
+      height: 272px;
+      cursor: pointer;
+      background-color: rgb(88, 88, 88);
+}
+.erroMensagem {
+      color: white;
+      font-size: 24px;
 }
 .heart {
       position: relative;
@@ -15,7 +27,7 @@
       position: absolute;
       padding: 0.5rem;
       top: 0;
-      left: 0;
+      left: 3%;
       width: 500px;
       height: 272px;
       background-color: rgba(0, 0, 0);
