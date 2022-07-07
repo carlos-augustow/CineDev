@@ -20,7 +20,10 @@ export const getStaticProps = async () => {
                   },
             });
             const data = await res.json();
-            conteudo[`videosPg${page}`] = data.videos;
+            let newData = data.videos.filter((video) => video.width === 1920);
+            console.log("newData: ", newData);
+            // conteudo[`videosPg${page}`] = data.videos;
+            conteudo[`videosPg${page}`] = newData;
       }
 
       return {
@@ -33,7 +36,7 @@ export const getStaticProps = async () => {
 function Main({ conteudo }) {
       const widthImgs = 2400;
       const heightImgs = 900;
-      console.log("videos: ", conteudo);
+      console.log("conteudooooooooooo: ", conteudo);
       return (
             <>
                   <HeaderMain />

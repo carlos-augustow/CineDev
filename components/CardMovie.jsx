@@ -9,12 +9,13 @@ const CardMovie = ({ video }) => {
       let link;
 
       const videocom1080 = videoFile.find((video) => video.width === 1920);
+
       if (videocom1080 !== undefined) {
-            console.log("videocom1080 : ", videocom1080);
+            // console.log("videocom1080 : ", videocom1080);
             link = videocom1080.link;
       }
 
-      if (videocom1080 !== undefined) {
+      if (videocom1080) {
             return (
                   <>
                         <Link href={`/player/${link}`}>
@@ -34,13 +35,14 @@ const CardMovie = ({ video }) => {
                         </Link>
                   </>
             );
-      } else {
-            return (
-                  <div className={styles.card}>
-                        <p className={styles.erroMensagem}>Não foi possível carregar o vídeo.</p>
-                  </div>
-            );
       }
+      //    else {
+      //         return (
+      //               <div className={styles.card}>
+      //                     <p className={styles.erroMensagem}>Não foi possível carregar o vídeo.</p>
+      //               </div>
+      //         );
+      //   }
 };
 
 export default CardMovie;
