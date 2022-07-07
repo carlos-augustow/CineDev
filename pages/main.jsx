@@ -21,7 +21,7 @@ export const getStaticProps = async () => {
             });
             const data = await res.json();
             let newData = data.videos.filter((video) => video.width === 1920);
-            console.log("newData: ", newData);
+            // console.log("newData: ", newData);
             // conteudo[`videosPg${page}`] = data.videos;
             conteudo[`videosPg${page}`] = newData;
       }
