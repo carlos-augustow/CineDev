@@ -1,22 +1,23 @@
-import callingApi from "./api/pexels";
-import styles from "../styles/Main.module.scss";
-import CardMovie from "../components/CardMovie";
 import Image from "next/image";
+import { useState } from "react";
 import HeaderMain from "../components/HeaderMain";
 import CarouselCards from "../components/CarouselCards";
+import Modal from "../components/Modal";
 
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
+import { useEffect } from "react";
 
 export const getStaticProps = async () => {
       const api = "https://api.pexels.com/videos";
       const qtd_videos = 20;
       const conteudo = {};
 
-      for (let page = 1; page <= 5; page++) {
+      for (let page = 1; page < 6; page++) {
             const res = await fetch(`${api}/popular?per_page=${qtd_videos}&page=${page}`, {
                   headers: {
-                        Authorization: "563492ad6f91700001000001ab6eb3dda42d46a8a0d200cb85026f38",
+                        // Authorization: "563492ad6f91700001000001ab6eb3dda42d46a8a0d200cb85026f38",
+                        Authorization: "563492ad6f9170000100000105794547f653409aa7d404968b70b419",
                   },
             });
             const data = await res.json();
@@ -36,9 +37,37 @@ export const getStaticProps = async () => {
 function Main({ conteudo }) {
       const widthImgs = 2400;
       const heightImgs = 900;
+
+      const [ativaModal, setAtivaModal] = useState(false);
+      const [video, setVideo] = useState(null);
       console.log("conteudooooooooooo: ", conteudo);
+
+      useEffect(() => {
+            const teste = async () => {
+                  const api = "https://api.pexels.com/videos";
+                  const qtd_videos = 20;
+                  const conteudo = {};
+
+                  for (let page = 1; page < 6; page++) {
+                        const res = await fetch(`${api}/popular?per_page=${qtd_videos}&page=${page}`, {
+                              headers: {
+                                    // Authorization: "563492ad6f91700001000001ab6eb3dda42d46a8a0d200cb85026f38",
+                                    Authorization: "563492ad6f9170000100000105794547f653409aa7d404968b70b419",
+                              },
+                        });
+                        const data = await res.json();
+                        // let newData = data.videos.filter((video) => video.width === 1920);
+                        // console.log("newData: ", newData);
+                        // conteudo[`videosPg${page}`] = data.videos;
+                        conteudo[`videosPg${page}`] = data.videos;
+                  }
+            };
+            teste();
+      }, []);
+
       return (
             <>
+                  <Modal video={video} ativaModal={ativaModal} />
                   <HeaderMain />
                   <Carousel
                         interval={4000}
@@ -68,11 +97,11 @@ function Main({ conteudo }) {
                         </div>
                   </Carousel>
 
-                  <CarouselCards conteudo={conteudo.videosPg1} />
-                  <CarouselCards conteudo={conteudo.videosPg2} />
-                  <CarouselCards conteudo={conteudo.videosPg3} />
-                  <CarouselCards conteudo={conteudo.videosPg4} />
-                  <CarouselCards conteudo={conteudo.videosPg5} />
+                  <CarouselCards setAtivaModal={setAtivaModal} setVideo={setVideo} conteudo={conteudo.videosPg1} />
+                  <CarouselCards setAtivaModal={setAtivaModal} setVideo={setVideo} conteudo={conteudo.videosPg2} />
+                  <CarouselCards setAtivaModal={setAtivaModal} setVideo={setVideo} conteudo={conteudo.videosPg3} />
+                  <CarouselCards setAtivaModal={setAtivaModal} setVideo={setVideo} conteudo={conteudo.videosPg4} />
+                  <CarouselCards setAtivaModal={setAtivaModal} setVideo={setVideo} conteudo={conteudo.videosPg5} />
             </>
       );
 }

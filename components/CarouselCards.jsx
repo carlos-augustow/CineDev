@@ -3,8 +3,8 @@ import CardMovie from "./CardMovie";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 
-export default function CarouselCards({ conteudo }) {
-      console.log("conteudo video: ", conteudo);
+export default function CarouselCards(props) {
+      console.log("conteudo video: ", props.conteudo);
       //   const conteudo1920 = conteudo.video.map((video) => {
       //         if (video.width === 1920) {
       //               return video;
@@ -25,8 +25,13 @@ export default function CarouselCards({ conteudo }) {
                         centerSlidePercentage={28}
                         showIndicators={false}
                   >
-                        {conteudo.map((video) => (
-                              <CardMovie key={video.id} video={video} />
+                        {props.conteudo.map((video) => (
+                              <CardMovie
+                                    setAtivaModal={props.setAtivaModal}
+                                    setVideo={props.setVideo}
+                                    key={video.id}
+                                    video={video}
+                              />
                         ))}
                   </Carousel>
             </div>

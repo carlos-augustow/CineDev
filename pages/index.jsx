@@ -34,7 +34,7 @@ export default function Home() {
                               height={115}
                               alt="dispositivos"
                         />
-                        <h3>Compativel com SmarTV's, Computadores, Smartphones, Tablet</h3>
+                        <h3>Compativel com SmarTV&apos;s, Computadores, Smartphones, Tablet</h3>
                         <h3>ou qualquer outro dispositivo com acesso à internet</h3>
                   </section>
                   <Footer />
