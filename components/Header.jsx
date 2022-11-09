@@ -7,7 +7,7 @@ export default function Header() {
                   <div className={styles.div_logo}>
                         <Image
                               className={styles.logo}
-                              src="/../public/imgs/logo-cutted.png"
+                              src="../public/imgs/logo-cutted.png"
                               height={50}
                               width={150}
                               alt="logo"
