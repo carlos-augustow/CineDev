@@ -4,17 +4,19 @@
       left: 50vw;
       transform: translate(-50%, -50%);
       z-index: 9999;
-      width: 20vw;
-      height: 40vh;
+      width: 400px;
+      height: 310px;
+      //   max-height: 700px !important;
+
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       background-color: rgb(88, 88, 88);
-      .close{
+      .close {
             align-self: flex-end;
             padding-right: 15px;
-            span{
+            span {
                   font-size: 1rem;
                   color: red;
                   cursor: pointer;
@@ -31,9 +33,9 @@
       .modal_buttons {
             display: flex;
             // justify-content: center;
-            margin-left: 30%;
+            margin-left: 18%;
 
-            // transform: translateX(-50%);  
+            // transform: translateX(-50%);
             align-items: center;
             width: 100%;
             // padding-left: 1.5rem;
