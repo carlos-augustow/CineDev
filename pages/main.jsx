@@ -83,7 +83,7 @@ function Main({ conteudo }) {
                   >
                         <div>
                               <Image
-                                    src="../public/imgs/prodev/1.png"
+                                    src="/../public/imgs/prodev/1.png"
                                     width={widthImgs}
                                     height={heightImgs}
                                     alt="img"
@@ -91,7 +91,7 @@ function Main({ conteudo }) {
                         </div>
                         <div>
                               <Image
-                                    src="../public/imgs/cinedev_banner.png"
+                                    src="/../public/imgs/cinedev_banner.png"
                                     width={widthImgs}
                                     height={heightImgs}
                                     alt="img"
