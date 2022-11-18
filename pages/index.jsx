@@ -14,10 +14,9 @@ export default function Home() {
                         <h2>Dispositivos compativeis:</h2>
                         <Image
                               className={styles.img_dispositivos}
-                              src="/../public/imgs/dispositivos.png"
-                              // width={480}
-                              // height={115}
-                              layout="fill"
+                              src="https://i.pinimg.com/236x/22/19/9d/22199de0f18648c8207152589aed247d.jpg"
+                              width={480}
+                              height={115}
                               alt="dispositivos"
                         />
                         <h3>Compativel com SmarTV&apos;s, Computadores, Smartphones, Tablet</h3>
