@@ -7,7 +7,7 @@ export default function Header() {
                   <div className={styles.div_logo}>
                         <Image
                               className={styles.logo}
-                              src="/../public/imgs/cinedev_escrito_branco.png"
+                              src="/imgs/cinedev_escrito_branco.png"
                               // height={50}
                               // width={150}
                               layout="fill"

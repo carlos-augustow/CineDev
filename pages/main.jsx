@@ -12,7 +12,7 @@ export const getStaticProps = async () => {
       const api = "https://api.pexels.com/videos";
       const qtd_videos = 20;
       const conteudo = {};
-
+      // rever se o for é a melhor forma de fazer isso
       for (let page = 1; page < 6; page++) {
             const res = await fetch(`${api}/popular?per_page=${qtd_videos}&page=${page}`, {
                   headers: {
@@ -82,20 +82,10 @@ function Main({ conteudo }) {
                         showStatus={false}
                   >
                         <div>
-                              <Image
-                                    src="/../public/imgs/prodev/1.png"
-                                    width={widthImgs}
-                                    height={heightImgs}
-                                    alt="img"
-                              />
+                              <Image src="/imgs/prodev/1.png" width={widthImgs} height={heightImgs} alt="img" />
                         </div>
                         <div>
-                              <Image
-                                    src="/../public/imgs/cinedev_banner.png"
-                                    width={widthImgs}
-                                    height={heightImgs}
-                                    alt="img"
-                              />
+                              <Image src="/imgs/cinedev_banner.png" width={widthImgs} height={heightImgs} alt="img" />
                         </div>
                   </Carousel>
 
