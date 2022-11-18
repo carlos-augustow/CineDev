@@ -9,21 +9,6 @@ export default function Home() {
             <>
                   <main className={styles.main}>
                         <Header />
-                        <div className={styles.supra_text}>
-                              <div className={styles.primary_text}>
-                                    <h1 className={styles.h1_1}>Filmes, séries e muito</h1>
-                                    <h1 className={styles.h1_2}>mais. Sem limites.</h1>
-                              </div>
-                              <div className={styles.secondary_text}>
-                                    <h3>Assista onde quiser. Cancele quando quiser.</h3>
-                              </div>
-                              <div className={styles.tertiary_text}>
-                                    <h4>
-                                          Pronto para assistir? Informe seu email para criar ou recriar sua assinatura.
-                                    </h4>
-                              </div>
-                        </div>
-                        <Input />
                   </main>
                   <section className={styles.dispositivos}>
                         <h2>Dispositivos compativeis:</h2>

@@ -7,16 +7,13 @@ export default function Header() {
                   <div className={styles.div_logo}>
                         <Image
                               className={styles.logo}
-                              src="/../public/imgs/logo-cutted.png"
+                              src="/../public/imgs/cinedev_escrito_branco.png"
                               height={50}
                               width={150}
                               alt="logo"
                         />
                   </div>
                   <div className={styles.div_botoes}>
-                        <div className={styles.btn_languages}>
-                              <span>Português</span>
-                        </div>
                         <Link href="/main">
                               <div className={styles.btn_login}>
                                     <span>Entrar</span>

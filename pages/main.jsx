@@ -21,7 +21,10 @@ export const getStaticProps = async () => {
                   },
             });
             const data = await res.json();
-            let newData = data.videos.filter((video) => video.width === 1920);
+            let newData;
+            if (data.videos) {
+                  newData = data.videos.filter((video) => video.width === 1920);
+            }
             // console.log("newData: ", newData);
             // conteudo[`videosPg${page}`] = data.videos;
             conteudo[`videosPg${page}`] = newData;
@@ -42,32 +45,31 @@ function Main({ conteudo }) {
       const [video, setVideo] = useState(null);
       console.log("conteudooooooooooo: ", conteudo);
 
-      useEffect(() => {
-            const teste = async () => {
-                  const api = "https://api.pexels.com/videos";
-                  const qtd_videos = 20;
-                  const conteudo = {};
+      // useEffect(() => {
+      //       const teste = async () => {
+      //             const api = "https://api.pexels.com/videos";
+      //             const qtd_videos = 20;
+      //             const conteudo = {};
 
-                  for (let page = 1; page < 6; page++) {
-                        const res = await fetch(`${api}/popular?per_page=${qtd_videos}&page=${page}`, {
-                              headers: {
-                                    // Authorization: "563492ad6f91700001000001ab6eb3dda42d46a8a0d200cb85026f38",
-                                    Authorization: "563492ad6f9170000100000105794547f653409aa7d404968b70b419",
-                              },
-                        });
-                        const data = await res.json();
-                        // let newData = data.videos.filter((video) => video.width === 1920);
-                        // console.log("newData: ", newData);
-                        // conteudo[`videosPg${page}`] = data.videos;
-                        conteudo[`videosPg${page}`] = data.videos;
-                  }
-            };
-            teste();
-      }, []);
+      //             for (let page = 1; page < 6; page++) {
+      //                   const res = await fetch(`${api}/popular?per_page=${qtd_videos}&page=${page}`, {
+      //                         headers: {
+      //                               // Authorization: "563492ad6f91700001000001ab6eb3dda42d46a8a0d200cb85026f38",
+      //                               Authorization: "563492ad6f9170000100000105794547f653409aa7d404968b70b419",
+      //                         },
+      //                   });
+      //                   const data = await res.json();
+      //                   let newData = data.videos.filter((video) => video.width === 1920);
+      //                   console.log("newData: ", newData);
+      //                   conteudo[`videosPg${page}`] = data.videos;
+      //             }
+      //       };
+      //       teste();
+      // }, []);
 
       return (
             <>
-                  <Modal video={video} ativaModal={ativaModal} />
+                  <Modal video={video} ativaModal={ativaModal} setAtivaModal={setAtivaModal} />
                   <HeaderMain />
                   <Carousel
                         interval={4000}

@@ -6,7 +6,20 @@
       z-index: 9999;
       width: 20vw;
       height: 40vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       background-color: rgb(88, 88, 88);
+      .close{
+            align-self: flex-end;
+            padding-right: 15px;
+            span{
+                  font-size: 1rem;
+                  color: red;
+                  cursor: pointer;
+            }
+      }
       .modal_text {
             width: 80%;
             padding: 10px;
@@ -16,8 +29,14 @@
             text-align: center;
       }
       .modal_buttons {
+            display: flex;
+            // justify-content: center;
+            margin-left: 30%;
+
+            // transform: translateX(-50%);  
+            align-items: center;
             width: 100%;
-            padding-left: 1.5rem;
+            // padding-left: 1.5rem;
             display: flex;
             align-items: center;
             flex-wrap: wrap;
