@@ -8,8 +8,8 @@ export default function Header() {
                         <Image
                               className={styles.logo}
                               src="/imgs/cinedev_escrito_branco.png"
-                              //   height={50}
-                              //   width={150}
+                              height={50}
+                              width={150}
                               //   layout="fill"
                               alt="logo"
                         />
