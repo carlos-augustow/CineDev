@@ -14,7 +14,7 @@ export default function Home() {
                         <h2>Dispositivos compativeis:</h2>
                         <Image
                               className={styles.img_dispositivos}
-                              src="/../public/imgs/dispositivos.png"
+                              src="../public/imgs/dispositivos.png"
                               width={480}
                               height={115}
                               alt="dispositivos"
