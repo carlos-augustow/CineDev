@@ -15,8 +15,9 @@ export default function Home() {
                         <Image
                               className={styles.img_dispositivos}
                               src="/../public/imgs/dispositivos.png"
-                              width={480}
-                              height={115}
+                              // width={480}
+                              // height={115}
+                              layout="fill"
                               alt="dispositivos"
                         />
                         <h3>Compativel com SmarTV&apos;s, Computadores, Smartphones, Tablet</h3>
