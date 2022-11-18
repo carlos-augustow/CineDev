@@ -5,8 +5,8 @@ export default function HeaderMain() {
       return (
             <header className={styles.header}>
                   <div className={styles.imgs}>
-                        <Image src="/imgs/logoNovo.png" alt="logo" layout="fill" />
-                        <Image src="/imgs/cinedev_escrito_branco.png" layout="fill" alt="img" />
+                        <Image src="/imgs/logoNovo.png" alt="logo" widht={50} height={50} layout="fill" />
+                        <Image src="/imgs/cinedev_escrito_branco.png" widht={150} height={50} layout="fill" alt="img" />
                   </div>
                   <div className={styles.btnSair}>
                         <span>
